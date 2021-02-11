@@ -12,7 +12,7 @@ var Yosmuel = {
 var dias = 0
 var contador = 0
 var pesosTotales = []
-
+var gremio = prompt('¿Cúal es tú gremio?')
 
 console.log('Al inicio del año ' + Yosmuel.nombre + ' pesa ' + Yosmuel.peso + 'kg') /* Peso original */
 const META = Yosmuel.peso - 3
@@ -66,3 +66,16 @@ if (contador === 1) {
     console.log('Fui a ver si llovía ' + contador + ' veces')
 }
 
+/* Switch */
+
+switch (gremio) {
+    case 'Osglon':
+        console.log('Ubicado al noroeste de Malia en los bosques de Teo, los más temibles y feroces cazadores')
+    break
+    case 'Avesti':
+        console.log('Ubicado al sur de Malia en las fronteras de Gran-pi, sus aves son tan fieles que incluso dan la vida por sus amos')
+    break
+    default:
+        console.log('Pronto abran más gremios para elegir')
+    break
+}
