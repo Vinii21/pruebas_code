@@ -56,3 +56,11 @@ const pasarAlturaACms = libro => ({
 var escritoresCms = libros.map(pasarAlturaACms)
 
 console.log(escritoresCms)
+
+/* Cantidad de capitulos de cada libro */
+
+const reducer = (acum, libro) => acum + libro.caps
+
+var totalCaps = libros.reduce(reducer, 0)
+
+console.log("En total tienen entre todos los escritores " + totalCaps + " capítulos")
