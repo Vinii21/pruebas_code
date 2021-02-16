@@ -1,18 +1,21 @@
 var Narnia = {
     nombre: 'Narnia',
     escritor: 'C. S. Lewis',
+    alturaescritor: 1.90,
     genero: 'Aventura fantastica',
     caps: 5
 }
 var ElNombreDelViento = {
     nombre: 'El Nombre Del Viento',
     escritor: 'Patrick Rothfuss',
+    alturaescritor: 1.50,
     genero: 'Fántasia pura y dura',
     caps: 2
 }
 var ReyesDelOceano = {
     nombre: 'Reyes del Océano',
     escritor: 'J. K. Noel',
+    alturaescritor: 1.80,
     genero: 'Fántasia aventura',
     caps: 3
 }
@@ -34,5 +37,22 @@ var libros = [Narnia, ElNombreDelViento, ReyesDelOceano]
 var librosLargos = libros.filter(esLargo)
 var librosCortos = libros.filter(esCorto)
 
-console.log(librosLargos)
-console.log(librosCortos)
+/* console.log(librosLargos)
+console.log(librosCortos) */
+
+/* metodo map() para pasar la altura de cada escritor de metros a centimetros */
+
+/* const pasarAlturaACms = libro => {
+    libro.alturaescritor *= 100
+    **libro.alturaescritor = libro.alturaescritor * 100**
+    return libro
+} */ /* Este array function devuelve un array nuevo gracias a .map() modificando el original */
+
+const pasarAlturaACms = libro => ({
+    ...libro,
+    alturaescritor: libro.alturaescritor * 100
+})  /* Este array function devuelve un array nuevo gracias a .map() con sin modificar el original */
+
+var escritoresCms = libros.map(pasarAlturaACms)
+
+console.log(escritoresCms)
