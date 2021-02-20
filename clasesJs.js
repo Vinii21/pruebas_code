@@ -8,8 +8,16 @@ class rey {
         this.genero = genero
     }
 
-    saludar(){
+    saludar(fn){
         console.log('Saludos, soy el rey ' + this.nombre + ' soberano del reino ' + this.reino)
+        switch (true){
+            case this.reino === 'Malia':
+                fn(this.nombre, this.reino, true)
+            break
+            case this.reino != 'Malia':
+                fn(this.nombre, this.reino, false)
+            break
+        }
     }
 }
 
@@ -19,19 +27,25 @@ class personaje extends rey {
     }
 
 
-    saludar(){
-        console.log('Hola')
+    saludar(fn){
+        console.log('Mi nombre es ' + this.nombre + ', soy de ' + this.reino)
+        switch (true){
+            case this.reino === 'Malia':
+                fn(this.nombre, this.reino, true)
+            break
+            case this.reino != 'Malia':
+                fn(this.nombre, this.reino, false)
+            break
         }
     
-    generoo(){
-        switch (true) {
-            case this.genero === 'M':
-                console.log('Soy varón')
-            break
-            case this.genero === 'F':
-                console.log('Soy mujer')
-            break
-        }
+}
+}
+
+
+function responderSaludo (nombre, reino, cazador) {
+    console.log('Saludos ' + nombre + ' de ' + reino + ', es un gusto')
+    if (cazador) {
+        console.log('Siendo de ' + reino + ' debes tener que ver con la cacería')
     }
 }
     
@@ -39,4 +53,10 @@ class personaje extends rey {
 
 var magnur = new rey('Magnur', 'Benoar', 44, 'Espada', 'M')
 var Luna = new personaje('Luna', 'Esperanza', 25, 'Coloso', 'F')
+var Lewis = new personaje('Lewis', 'Malia', 20, 'Arco', 'M')
+
+magnur.saludar(responderSaludo)
+Luna.saludar(responderSaludo)
+Lewis.saludar(responderSaludo)
+
 
