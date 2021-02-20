@@ -41,7 +41,7 @@ class personaje extends rey {
 }
 }
 
-
+/* Esta es una function que se usa como parametro para responder el saludo, y secciona la respuesta en si es o no cazador */
 function responderSaludo (nombre, reino, cazador) {
     console.log('Saludos ' + nombre + ' de ' + reino + ', es un gusto')
     if (cazador) {
