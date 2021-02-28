@@ -19,5 +19,17 @@ function onError (id){
 obtenerPersonaje(1)
     .then(personaje => {
         console.log('Hola, mi personaje se llama ' + personaje.name)
+        return obtenerPersonaje(2)
+    })
+    .then(personaje => {
+        console.log('Hola, mi personaje se llama ' + personaje.name)
+        return obtenerPersonaje(3)
+    })
+    .then(personaje => {
+        console.log('Hola, mi personaje se llama ' + personaje.name)
+        return obtenerPersonaje(4)
+    })
+    .then(personaje => {
+        console.log('Hola, mi personaje se llama ' + personaje.name)
     })
     .catch(onError)
