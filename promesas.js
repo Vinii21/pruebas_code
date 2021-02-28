@@ -8,7 +8,7 @@ function obtenerPersonaje (id) {
         $.get(URL, opts, function(data){
             resolve(data)
         })
-        .fail(() => reject=id)
+        .fail(() => reject = id)
     })
 }
 
